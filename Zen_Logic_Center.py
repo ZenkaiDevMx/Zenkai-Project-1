@@ -64,3 +64,24 @@ def check_budget(price):
         return "Precio alto. Mejor esperar al CyberPower y ahorrar."
 
 print(check_budget(precio_gpu))
+
+#Ejemplo 4
+
+print("Programa de evaluación de notas de alumnos")
+
+nota_alumno=input()
+
+def evaluacion(nota):
+    valoracion="aprobado"
+    if nota<5:
+        valoracion="suspenso"
+        calificacion=7
+    return valoracion
+
+print(evaluacion(int(nota_alumno)))
+
+
+
+
+
+#El ámbito o estructura del código, solo podras accesar a una variable solo en el mismo ámbito que fue declarada, en el ejemplo si agregamos la variable calificación, solo podremos acceder en el ámbito especifico y si se cumple la condicional if.
