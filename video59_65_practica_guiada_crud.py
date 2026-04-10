@@ -1,3 +1,13 @@
+# PILDORAS INFORMATICAS
+# PYTHON
+# VIDEO 59-65
+# PRACTICA GUIADA
+#.APLICACION GRAFICA CRUD
+
+
+#CODIGO DEL PROGRAMA CRUD 
+
+
 from tkinter import *
 from tkinter import messagebox
 import sqlite3
@@ -147,3 +157,29 @@ Button(miFrame2, text="Update", command=actualizar).grid(row=0, column=2, padx=1
 Button(miFrame2, text="Delete", command=eliminar).grid(row=0, column=3, padx=10, pady=10)
 
 root.mainloop()
+
+#Este sistema representa la integración total de una Interfaz de Usuario (GUI) con un motor de Bases de 
+#Datos Relacionales (SQLite). La arquitectura se divide en dos capas críticas: el Front-end (Tkinter) y 
+#el Back-end (Lógica SQL). La soberanía del sistema reside en la variable RUTA_BBDD, que actúa como el 
+#ancla de datos en nuestro disco duro. El flujo de información se gestiona mediante objetos StringVar(), 
+#que actúan como "puentes" de comunicación en tiempo real entre los cuadros de entrada y las variables 
+#de Python. Para garantizar la integridad referencial, cada función del CRUD (Crear, Leer, Actualizar, 
+#Borrar) abre y cierra una conexión única; esto evita bloqueos de archivos y corrupciones en el búnker.
+#En el corazón del sistema, hemos implementado tres niveles de Blindaje Técnico:
+
+#1. Seguridad Lógica y Resiliencia: Este proyecto consolida la comunicación entre Python y SQL mediante 
+#una arquitectura de funciones modulares. La robustez del sistema no solo reside en la gestión de la 
+#"datos" en el disco duro, sino en su seguridad lógica al implementar show="*" en el campo de 
+#Password, elevando el estándar de privacidad humana. Finalmente, el uso estratégico de bloques 
+#try/except junto con cuadros de mensaje (messagebox) transforma el programa en un sistema antifrágil; 
+#esto garantiza que el búnker no colapse ante errores de conexión o IDs inexistentes, informando al 
+#usuario en tiempo real sobre el estado de la base de datos.
+
+#2. Prevención de Inyección SQL: Al usar tuplas (datos) y marcadores de posición ?, el sistema 
+#neutraliza ataques que intenten manipular el código desde los campos de texto, asegurando que las 
+#órdenes al motor de búsqueda sean puras y controladas.
+
+#3. Higiene de Datos: El método limpiarCampos() y el uso de delete("1.0", END) en el widget de 
+#comentarios (Text) aseguran que cada consulta sea una "página en blanco", eliminando el bug de 
+#persistencia de basura que afectaba a versiones anteriores del programa y garantizando una gestión de 
+#datos impecable.
